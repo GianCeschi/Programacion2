@@ -1,0 +1,8 @@
+package tp6_ej2;
+
+//AHORA ES UNA INTERFACE
+public interface ElementoCola {
+
+	//EL ELEMENTO VA A SABER SI ES MAYOR A OTRO. ESTE METODO ES ABSTRACTO PORQUE NO SABE CUANDO ES MAYOR ES DEPENDE LO QUE SEA.
+	 boolean esMayor(ElementoCola otro);
+}
