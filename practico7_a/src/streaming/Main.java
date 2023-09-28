@@ -11,10 +11,10 @@ public class Main {
 		
 		//PRIMERO INSTANCIAR ESTO SINO DA ERROR PORQUE NO ESTA CREADO Y SE LO QUIERO PASAR POR PARAMETRO A LA PLATAFORMA.
 		
-		Rentabilidad r1 = new DuracionMenor120MinGeneroDistintoComedia("Comedia", 120);
-		Rentabilidad r2 = new Posterior2017ExceptoInfantil_Documental(2017, "Infantil", "Documental");
+		Filtro r1 = new DuracionMenor120MinGeneroDistintoComedia("Comedia", 120);
+		Filtro r2 = new Posterior2017ExceptoInfantil_Documental(2017, "Infantil", "Documental");
 		
-		PlataformaStreaming netflix = new PlataformaStreaming("Netflix", r1);//LE PASO POLITICA DE ADQUISICION.
+		PlataformaStreaming netflix = new PlataformaStreaming("Netflix", r2);//LE PASO POLITICA DE ADQUISICION.
 		
 		Pelicula p1 = new Pelicula("Titanic", "Se hunde barco", "Drama", "Pablo Perez", 1990, 180, 13);
 		Pelicula p2 = new Pelicula("Harry Potter", "Todo ocurre en una escuela de magia", "Documental", "JK Rowling", 2002, 195, 13);

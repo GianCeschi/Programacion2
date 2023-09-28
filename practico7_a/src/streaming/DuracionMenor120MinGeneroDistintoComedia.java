@@ -1,6 +1,7 @@
 package streaming;
 
-public class DuracionMenor120MinGeneroDistintoComedia extends Rentabilidad {
+//ESTA ES UNA CLASE QUE HEREDA DE FILTRO. DESPUES CON PATRONES DE DISEÑO. VEMOS ESTOS DETALLES
+public class DuracionMenor120MinGeneroDistintoComedia extends Filtro {
 
 	private String genero;
 	private int duracion;
@@ -10,7 +11,7 @@ public class DuracionMenor120MinGeneroDistintoComedia extends Rentabilidad {
 		this.duracion = duracion;
 	}
 	@Override
-	public boolean esRentable(Pelicula peli) {
+	public boolean cumple(Pelicula peli) {
 		return peli.getDuracionMinutos()<duracion && peli.getGenero().toLowerCase()!=genero;
 	}
 

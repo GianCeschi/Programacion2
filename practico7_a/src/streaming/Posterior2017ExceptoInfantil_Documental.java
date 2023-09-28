@@ -1,6 +1,6 @@
 package streaming;
 
-public class Posterior2017ExceptoInfantil_Documental extends Rentabilidad {
+public class Posterior2017ExceptoInfantil_Documental extends Filtro {
 
 	private int anio;
 	private String genero1;  //Infantil
@@ -12,7 +12,7 @@ public class Posterior2017ExceptoInfantil_Documental extends Rentabilidad {
 		this.genero2 = genero2.toLowerCase();
 	}
 	@Override
-	public boolean esRentable(Pelicula peli) {
+	public boolean cumple(Pelicula peli) {
 		return peli.getAnioEstreno()>anio || peli.getGenero().toLowerCase().equals(genero1)  ||  peli.getGenero().toLowerCase().equals(genero2);
 	}
 

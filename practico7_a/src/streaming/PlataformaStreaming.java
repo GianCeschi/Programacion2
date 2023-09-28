@@ -6,9 +6,9 @@ public class PlataformaStreaming {
 
 	private String nombre;
 	private ArrayList<Pelicula>peliculas;
-	private Rentabilidad rent; //VER SI ESTA BIEN 
+	private Filtro rent; //ESTO ES UN FILTRO NO CREO UNA CLASE RENTABILIDAD QUE TENGA EL MISMO METODO ABSTRACTO CUMPLE QUE SE LLAME DISTINTO(ES_RENTABLE)
 	
-	public PlataformaStreaming(String nombre, Rentabilidad rent) {
+	public PlataformaStreaming(String nombre, Filtro rent) {
 		this.nombre = nombre;
 		this.rent = rent; //NO OLVIDAR DE HACER ESTO.
 		this.peliculas = new ArrayList<Pelicula>();
@@ -33,7 +33,7 @@ public class PlataformaStreaming {
 	}
 	//SE ADQUIERE UNA PELICULA SI ES RENTABLE PARA LA EMPRESA SEGUN LOS CRITERIOS QUE BAJEN LOS SUPERIORES.
 	public boolean esRentable(Pelicula p) {
-		return rent.esRentable(p);
+		return rent.cumple(p);             //EJECUTO EL CUMPLE Y NO EL ES RENTABLE DE RENTABILIDAD QUE YA ELIMINE. QUEDA FEO DESPUES ESTO SE CORRIJE CON PATRON DISEÑO
 	}
 	
 	public ArrayList<Pelicula> buscarPelicula(Filtro filtro){
