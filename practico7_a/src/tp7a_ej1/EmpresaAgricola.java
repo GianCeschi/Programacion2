@@ -49,7 +49,7 @@ public class EmpresaAgricola {
 		ArrayList<ProductoQuimico> retorno = new ArrayList<>();
 		for(int i=0; i<agroquimicos.size();i++) {
 			ProductoQuimico actual = agroquimicos.get(i);
-			if(e.seContienenTodosEstadosPatologicos(actual)) {
+			if(e.esTratadaPor(actual)) {
 				retorno.add(actual);
 			}
 		}

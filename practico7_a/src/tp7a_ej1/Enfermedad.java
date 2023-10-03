@@ -15,9 +15,20 @@ public class Enfermedad {
 	/*Se considera que el
 	  agroquímico trata una enfermedad si todos los estados patológicos de la enfermedad están
 	  contenidos por las acciones del producto químico.*/
-	
+	/*
 	public boolean seContienenTodosEstadosPatologicos(ProductoQuimico pq) {
 		return pq.getEstadosPatalogicos().containsAll(estadosPatalogicos);
+	}*/ //MAL LA DELEGACION DE RESPONSABILIDADES.
+	
+	//ACA SE DELEGAN BIEN LAS RESPOSABILIDADES.
+	public boolean esTratadaPor(ProductoQuimico pq) {
+		for(int i=0; i<estadosPatalogicos.size();i++) {
+			String estado = estadosPatalogicos.get(i);
+			if(!pq.trataEnfermedad(estado)) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public String getNombre() {

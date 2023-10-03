@@ -45,6 +45,27 @@ public class ProductoQuimico {
 	public boolean puedeTratarEnfermedad(Enfermedad e, Cultivo c) {
 		return c.esUtilProductoQuimico(this) ;
 	}
+	
+	//ACA SE DELEGAN BIEN LAS RESPOSABILIDADES.
+	public boolean trataEnfermedad(String estado) {
+		for(int i= 0;i<estadosPatalogicos.size();i++) {
+			String estadoActual= estadosPatalogicos.get(i);
+			if(estadoActual.equalsIgnoreCase(estado)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean seAconsejaUso(Cultivo c) {
+		for(int i =0; i<cultivosDesaconsejados.size(); i++) {
+			Cultivo cultivoActual = cultivosDesaconsejados.get(i);
+			if(cultivoActual.equals(c)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	@Override
 	public String toString() {

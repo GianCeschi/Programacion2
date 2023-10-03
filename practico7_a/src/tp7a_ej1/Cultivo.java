@@ -22,12 +22,14 @@ public class Cultivo {
 	public boolean esUtilProductoQuimico(ProductoQuimico pq) {
 		for(int i = 0; i<enfermedadesFrecuentes.size(); i++) {
 			Enfermedad e = enfermedadesFrecuentes.get(i);
-			if(e.seContienenTodosEstadosPatologicos(pq) && !pq.getcultivosDesaconsejados().contains(this)) { 
-				return true;													//SI ESE CULTIVO NO ESTA EN LOS CULTIVOS DESACONSEJADOS DEL PROD QUIMICO.
+			if(e.esTratadaPor(pq) && pq.seAconsejaUso(this)) { //!pq.getcultivosDesaconsejados().contains(this) MALA DELEGACION DE RESPONSABILIDAD.
+				return true;							    	//SI ESE CULTIVO NO ESTA EN LOS CULTIVOS DESACONSEJADOS DEL PROD QUIMICO.
 			}
 		}
 		return false;
 	}
+	
+	//PREGUNTAR SI TENGO QUE HACER UN METODO ES ACONSEJADO SU USO QUE RECIBA UN PQ O YA PUEDO METER EN EL IF DE ARRIBA EL METODO DE PQ
 	
 	public String getNombre() {
 		return nombre;
