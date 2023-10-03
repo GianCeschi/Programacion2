@@ -46,4 +46,8 @@ public class PlataformaStreaming {
 		}
 		return retorno;
 	}
+	//CREO ESTE SET PARA CAMBIAR EN TIEMPO DE EJECUCION!!!
+	public void setRentabilidad(Filtro rent) {
+		this.rent = rent;
+	}
 }

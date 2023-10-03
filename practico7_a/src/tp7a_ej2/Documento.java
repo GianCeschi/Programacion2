@@ -38,6 +38,16 @@ public class Documento {
 		return new ArrayList<>(palabrasClaves);
 	}
 
+	public boolean contienePalabraClave(String palabra) {
+		for(int i= 0; i<palabrasClaves.size(); i++) {
+			String clave = palabrasClaves.get(i);
+			if(clave.equalsIgnoreCase(palabra)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}

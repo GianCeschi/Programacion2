@@ -85,6 +85,16 @@ public class Pelicula {
 		}
 	}
 	
+	public boolean contieneActor(String actor) {
+		for(int i=0; i<actores.size();i++) {
+			String actual = actores.get(i);
+			if(actual.equalsIgnoreCase(actor)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean equals(Object o) {
 		try {
 			Pelicula p = (Pelicula)o;

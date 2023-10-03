@@ -16,6 +16,9 @@ public class Main {
 		
 		PlataformaStreaming netflix = new PlataformaStreaming("Netflix", r2);//LE PASO POLITICA DE ADQUISICION.
 		
+		netflix.setRentabilidad(r1); //ESTE ES EL TIEMPO DE EJECUCION!!!
+		
+		
 		Pelicula p1 = new Pelicula("Titanic", "Se hunde barco", "Drama", "Pablo Perez", 1990, 180, 13);
 		Pelicula p2 = new Pelicula("Harry Potter", "Todo ocurre en una escuela de magia", "Documental", "JK Rowling", 2002, 195, 13);
 		Pelicula p3 = new Pelicula("Soy leyenda", "Apocalictico", "Suspenso", "Pepe Lopez", 2004, 100, 13);
@@ -26,7 +29,7 @@ public class Main {
 		
 		Filtro f1 = new FiltroPorTitulo("luna");
 		Filtro f2 = new FiltroGeneroEspecifico("Terror");
-		Filtro f3 = new FiltroActorYNoDirector("Will Smith", "Martin Scorsese");
+		Filtro f3 = new FiltroActorYNoDirector("Will Smith", "Martin Scorsese"); //SI TENGO RENTABILIDAD 2 NO FUNCIONA ESTE FILTRO.
 		Filtro f4 = new FiltroAnioEstrenoYDuracionMenor(2015, 95);
 		
 		
@@ -44,6 +47,8 @@ public class Main {
 		System.out.println(netflix.buscarPelicula(f3));
 		System.out.println(netflix.buscarPelicula(f4));
 		
+		
+		System.out.println("Peliculas rentables para la plataforma de Streaming Netflix");
 		//Rentabilidad
 		System.out.println(netflix.getPeliculas());
 	}

@@ -7,9 +7,9 @@ public class CondicionPalabraClave extends Condicion {
 	public CondicionPalabraClave(String palabraClave) {
 		this.palabraClave = palabraClave;
 	}
-	@Override
+	@Override //RESPONSABILIDAD DE DOCUMENTO, NO ESTA BUENO QUE RECORRA EL ARRAYLIST DE PALABRAS CLAVES ESTO! POR ESO NO PASARLE EL GETPALABRASCLAVES
 	public boolean cumple(Documento doc) {
-		return doc.getPalabrasClaves().contains(palabraClave);
+		return doc.contienePalabraClave(palabraClave);
 	}
 
 }
